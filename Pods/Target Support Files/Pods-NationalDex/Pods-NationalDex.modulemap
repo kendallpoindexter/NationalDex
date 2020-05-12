@@ -1,0 +1,6 @@
+framework module Pods_NationalDex {
+  umbrella header "Pods-NationalDex-umbrella.h"
+
+  export *
+  module * { export * }
+}
