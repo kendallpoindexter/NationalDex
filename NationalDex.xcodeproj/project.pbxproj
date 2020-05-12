@@ -16,6 +16,7 @@
 		B2F58DA7246A31BD0058720C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F58DA5246A31BD0058720C /* LaunchScreen.storyboard */; };
 		B2F58DB1246A38920058720C /* PokedexEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DB0246A38920058720C /* PokedexEntryModel.swift */; };
 		B2F58DB3246A38B30058720C /* PokedexModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DB2246A38B30058720C /* PokedexModel.swift */; };
+		B2F58DB5246AFB2C0058720C /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DB4246AFB2C0058720C /* Pokemon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B2F58DA8246A31BD0058720C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2F58DB0246A38920058720C /* PokedexEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexEntryModel.swift; sourceTree = "<group>"; };
 		B2F58DB2246A38B30058720C /* PokedexModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexModel.swift; sourceTree = "<group>"; };
+		B2F58DB4246AFB2C0058720C /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				B2F58DB0246A38920058720C /* PokedexEntryModel.swift */,
 				B2F58DB2246A38B30058720C /* PokedexModel.swift */,
+				B2F58DB4246AFB2C0058720C /* Pokemon.swift */,
 			);
 			path = "Models ";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				B2F58DB3246A38B30058720C /* PokedexModel.swift in Sources */,
 				B2F58D9B246A31BC0058720C /* AppDelegate.swift in Sources */,
 				B2F58D9D246A31BC0058720C /* SceneDelegate.swift in Sources */,
+				B2F58DB5246AFB2C0058720C /* Pokemon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
