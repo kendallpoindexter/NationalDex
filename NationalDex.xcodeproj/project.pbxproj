@@ -72,6 +72,7 @@
 		B2F58D99246A31BC0058720C /* NationalDex */ = {
 			isa = PBXGroup;
 			children = (
+				B2F58DAF246A379A0058720C /* Models  */,
 				B2F58DAE246A37550058720C /* Networking  */,
 				B2F58D9A246A31BC0058720C /* AppDelegate.swift */,
 				B2F58D9C246A31BC0058720C /* SceneDelegate.swift */,
@@ -89,6 +90,13 @@
 			children = (
 			);
 			path = "Networking ";
+			sourceTree = "<group>";
+		};
+		B2F58DAF246A379A0058720C /* Models  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Models ";
 			sourceTree = "<group>";
 		};
 		D6D53D63AFB8F05A2AC6727F /* Frameworks */ = {
