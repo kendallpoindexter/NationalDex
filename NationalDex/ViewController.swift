@@ -12,7 +12,23 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //Sample test code to make sure we are getting proper network calls
+        NetworkManager().fetchPokedexEntries { result in
+            switch result {
+            case .success(let pokedex):
+                NetworkManager().fetchPokemon(urlString: pokedex.results[1].url) { (result) in
+                    switch result {
+                    case .success(let pokemon):
+                        print(pokemon)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            case .failure(let error):
+                print("Opps \(error)")
+            }
+        }
     }
 
 
