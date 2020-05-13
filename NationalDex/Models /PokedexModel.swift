@@ -11,3 +11,8 @@ import Foundation
 struct Pokedex: Decodable {
      let results: [PokedexEntry]
 }
+
+struct PokedexEntry: Decodable, Hashable {
+     let name: String
+     let url: String
+}
