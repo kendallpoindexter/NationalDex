@@ -12,6 +12,11 @@ final class HomeTableViewModel {
     let networkManager = NetworkManager()
    private(set) var pokedexEntries: [PokedexEntry] = []
     
+    func detailViewModel(at index: Int) -> DetailViewModel {
+        let viewModel = DetailViewModel(pokedexEntry: pokedexEntries[index])
+        return viewModel
+    }
+    
     func fetchPokedexEntries(completion: ((Result<[PokedexEntry],Error>) -> Void)? = nil)  {
         networkManager.fetchPokedexEntries { result in
             switch result {
