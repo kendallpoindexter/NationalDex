@@ -30,6 +30,7 @@ struct AbilityResponse: Decodable {
     
 }
 
+//Rename to ability reference
 struct PokeAbility: Decodable {
     let name: String
     let url: String

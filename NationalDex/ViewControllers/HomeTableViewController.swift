@@ -21,6 +21,7 @@ class HomeTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        homeTableView.delegate = self
         self.configureDataSource()
 
         viewModel.fetchPokedexEntries { result in
@@ -31,9 +32,8 @@ class HomeTableViewController: UIViewController {
                 print(error)
             }
         }
-        
     }
-
+    
     private func configureDataSource() {
         self.dataSource = UITableViewDiffableDataSource(tableView: self.homeTableView, cellProvider: { (tableView, indexPath, entry) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "pokedexEntryCell", for: indexPath)
@@ -48,5 +48,21 @@ class HomeTableViewController: UIViewController {
          snapShot.appendItems(viewModel.pokedexEntries)
          dataSource?.apply(snapShot)
      }
+}
+
+//MARK: - Navigation
+
+extension HomeTableViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = homeTableView.indexPathForSelectedRow else { return }
+        guard let destination = segue.destination as? DetailViewController else { return }
+        destination.viewModel = viewModel.detailViewModel(at: indexPath.row) 
+    }
+}
+
+extension HomeTableViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        homeTableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
