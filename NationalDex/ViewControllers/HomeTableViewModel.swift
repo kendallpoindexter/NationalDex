@@ -10,10 +10,18 @@ import Foundation
 
 final class HomeTableViewModel {
     let networkManager = NetworkManager()
+    var filteredPokemonEntry: [PokedexEntry] = []
    private(set) var pokedexEntries: [PokedexEntry] = []
+    
+    
     
     func detailViewModel(at index: Int) -> DetailViewModel {
         let viewModel = DetailViewModel(pokedexEntry: pokedexEntries[index])
+        return viewModel
+    }
+    
+    func detailViewModelWithFilteredEntries(at index: Int) -> DetailViewModel {
+        let viewModel = DetailViewModel(pokedexEntry: filteredPokemonEntry[index])
         return viewModel
     }
     

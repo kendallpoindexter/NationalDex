@@ -16,7 +16,15 @@ class HomeTableViewController: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
      
     private let viewModel = HomeTableViewModel()
+    private let searchController = UISearchController(searchResultsController: nil)
     private var dataSource: UITableViewDiffableDataSource<Section, PokedexEntry>?
+    
+    private var isSearchBarEmpty: Bool {
+        searchController.searchBar.text?.isEmpty ?? true
+    }
+    private var isFiltering: Bool {
+        searchController.isActive && !isSearchBarEmpty
+    }
     
     
     override func viewDidLoad() {
@@ -32,6 +40,8 @@ class HomeTableViewController: UIViewController {
                 print(error)
             }
         }
+        
+        configureSearchController()
     }
     
     private func configureDataSource() {
@@ -45,9 +55,32 @@ class HomeTableViewController: UIViewController {
     private func updateUI() {
          var snapShot = NSDiffableDataSourceSnapshot<Section, PokedexEntry>()
          snapShot.appendSections([.main])
-         snapShot.appendItems(viewModel.pokedexEntries)
+        
+        if isFiltering {
+            snapShot.appendItems(viewModel.filteredPokemonEntry)
+        } else {
+            snapShot.appendItems(viewModel.pokedexEntries)
+        }
+        
          dataSource?.apply(snapShot)
      }
+    
+    private func configureSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Pokemon by Name"
+        navigationItem.searchController = searchController
+        searchController.definesPresentationContext = true
+    }
+    
+    private func filterSearchText(with text: String) {
+        viewModel.filteredPokemonEntry = viewModel.pokedexEntries.filter({
+            $0.name.lowercased().contains(text.lowercased())
+        })
+        
+        updateUI()
+    }
+    
 }
 
 //MARK: - Navigation
@@ -56,13 +89,28 @@ extension HomeTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = homeTableView.indexPathForSelectedRow else { return }
         guard let destination = segue.destination as? DetailViewController else { return }
-        destination.viewModel = viewModel.detailViewModel(at: indexPath.row) 
+        
+        if isFiltering {
+            destination.viewModel = viewModel.detailViewModelWithFilteredEntries(at: indexPath.row)
+        } else {
+            destination.viewModel = viewModel.detailViewModel(at: indexPath.row)
+        }
     }
 }
 
+//MARK: - TableView Delegate Methods
 extension HomeTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         homeTableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
+//MARK: - SearchController Methods
+
+extension HomeTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBarText = searchController.searchBar.text
+        //should this be forced unwrapped? In my thoughts it should be because if we are updating search results then we must have user entered search text
+        filterSearchText(with: searchBarText!)
+    }
+}
