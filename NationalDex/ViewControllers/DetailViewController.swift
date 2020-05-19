@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var firstAbilityDescriptionLabel: UILabel!
     @IBOutlet weak var secondAbilityLabel: UILabel!
     @IBOutlet weak var secondAbilityDescriptionLabel: UILabel!
+    @IBOutlet weak var favoriteButton: UIButton!
     
     
     var viewModel: DetailViewModel? {
@@ -30,9 +31,26 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         reloadUI()
     }
+    
+//Button Image 
+    
+//    private func configureButtonImage() {
+//        favoriteButton.isSelected =  true
+//
+//        if favoriteButton.isSelected {
+//            favoriteButton.setImage(UIImage(systemName: "star.fill"), for: .selected)
+//        } else {
+//            favoriteButton.imageView?.image = UIImage(systemName: "star")
+//        }
+//    }
+    
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        guard let name = viewModel?.pokemon?.name else { return }
+        viewModel?.addFavoritePokemon(name: name)
+    }
+    
 }
 
 extension DetailViewController: DetailViewModelDelegate {
