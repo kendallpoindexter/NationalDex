@@ -13,6 +13,11 @@ class HomeTableViewController: UIViewController {
         case main
     }
     
+    enum SegueIdentifiers: String {
+        case pokedexDetailSegue = "pokedexDetailSegue"
+        case favoritesSegue = "favoritesSegue"
+    }
+    
     @IBOutlet weak var homeTableView: UITableView!
      
     private let viewModel = HomeTableViewModel()
@@ -45,7 +50,7 @@ class HomeTableViewController: UIViewController {
     }
     
     private func configureDataSource() {
-        self.dataSource = UITableViewDiffableDataSource(tableView: self.homeTableView, cellProvider: { (tableView, indexPath, entry) -> UITableViewCell? in
+            dataSource = UITableViewDiffableDataSource(tableView: homeTableView, cellProvider: { (tableView, indexPath, entry) -> UITableViewCell? in
             let cell = tableView.dequeueReusableCell(withIdentifier: "pokedexEntryCell", for: indexPath)
             cell.textLabel?.text = entry.name
             return cell
@@ -73,6 +78,8 @@ class HomeTableViewController: UIViewController {
         searchController.definesPresentationContext = true
     }
     
+    //Abstract into viewModel 
+    
     private func filterSearchText(with text: String) {
         viewModel.filteredPokemonEntry = viewModel.pokedexEntries.filter({
             $0.name.lowercased().contains(text.lowercased())
@@ -88,6 +95,7 @@ class HomeTableViewController: UIViewController {
 extension HomeTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = homeTableView.indexPathForSelectedRow else { return }
+        
         guard let destination = segue.destination as? DetailViewController else { return }
         
         if isFiltering {

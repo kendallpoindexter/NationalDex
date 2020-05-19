@@ -9,7 +9,7 @@
 import Foundation
 
 final class HomeTableViewModel {
-    let networkManager = NetworkManager()
+  private let networkManager = NetworkManager()
     var filteredPokemonEntry: [PokedexEntry] = []
    private(set) var pokedexEntries: [PokedexEntry] = []
     
