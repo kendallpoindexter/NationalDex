@@ -21,7 +21,7 @@ struct NetworkManager {
             self.fetchAbilities(from: pokemonResponse.abilities).map { (pokemonResponse, $0)}
         }.done { pokemonResponses, abilities in
             let types = self.fetchTypes(from: pokemonResponses.types)
-            let pokemon = Pokemon(name: pokemonResponses.name, abilities: abilities, types: types)
+            let pokemon = Pokemon(name: pokemonResponses.name, abilities: abilities, types: types, isFavorite: nil)
             completion(.success(pokemon))
         }.catch { error in
             completion(.failure(error))

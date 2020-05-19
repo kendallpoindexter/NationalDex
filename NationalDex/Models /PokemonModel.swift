@@ -8,10 +8,21 @@
 
 import Foundation
 
-struct Pokemon {
+//Why did I have to implement this here but not in the pokedex model?
+
+struct Pokemon: Hashable {
+    let uuid = UUID()
     let name: String
     let abilities: [Ability]
     let types: [String]
+    let isFavorite: Bool?
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(uuid)
+    }
+    static func == (lhs: Pokemon, rhs: Pokemon) -> Bool {
+        lhs.uuid == rhs.uuid
+    }
 }
 
 struct PokemonResponse: Decodable {

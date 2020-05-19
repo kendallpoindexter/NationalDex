@@ -20,6 +20,10 @@
 		B2F58DD9246C89F30058720C /* HomeTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DD8246C89F30058720C /* HomeTableViewModel.swift */; };
 		B2F58DDC246CD3BA0058720C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DDB246CD3BA0058720C /* DetailViewController.swift */; };
 		B2F58DDE246CD6990058720C /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DDD246CD6990058720C /* DetailViewModel.swift */; };
+		B2F58DE024721D860058720C /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DDF24721D860058720C /* FavoritesCollectionViewController.swift */; };
+		B2F58DE2247326670058720C /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DE1247326670058720C /* FavoritesCollectionViewCell.swift */; };
+		B2F58DE424732BAA0058720C /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DE324732BAA0058720C /* FavoritesController.swift */; };
+		B2F58DE624737A0E0058720C /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58DE524737A0E0058720C /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		B2F58DD8246C89F30058720C /* HomeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewModel.swift; sourceTree = "<group>"; };
 		B2F58DDB246CD3BA0058720C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B2F58DDD246CD6990058720C /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		B2F58DDF24721D860058720C /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
+		B2F58DE1247326670058720C /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
+		B2F58DE324732BAA0058720C /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
+		B2F58DE524737A0E0058720C /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,10 @@
 				B2F58DDD246CD6990058720C /* DetailViewModel.swift */,
 				B2F58D9E246A31BC0058720C /* HomeTableViewController.swift */,
 				B2F58DD8246C89F30058720C /* HomeTableViewModel.swift */,
+				B2F58DDF24721D860058720C /* FavoritesCollectionViewController.swift */,
+				B2F58DE1247326670058720C /* FavoritesCollectionViewCell.swift */,
+				B2F58DE324732BAA0058720C /* FavoritesController.swift */,
+				B2F58DE524737A0E0058720C /* FavoritesViewModel.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -249,14 +261,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2F58D9F246A31BC0058720C /* HomeTableViewController.swift in Sources */,
+				B2F58DE2247326670058720C /* FavoritesCollectionViewCell.swift in Sources */,
 				B2F58DB3246A38B30058720C /* PokedexModel.swift in Sources */,
 				B2F58DB7246AFDC50058720C /* NetworkManager.swift in Sources */,
 				B2F58D9B246A31BC0058720C /* AppDelegate.swift in Sources */,
+				B2F58DE024721D860058720C /* FavoritesCollectionViewController.swift in Sources */,
 				B2F58DDE246CD6990058720C /* DetailViewModel.swift in Sources */,
 				B2F58DD9246C89F30058720C /* HomeTableViewModel.swift in Sources */,
 				B2F58D9D246A31BC0058720C /* SceneDelegate.swift in Sources */,
 				B2F58DB5246AFB2C0058720C /* PokemonModel.swift in Sources */,
 				B2F58DDC246CD3BA0058720C /* DetailViewController.swift in Sources */,
+				B2F58DE424732BAA0058720C /* FavoritesController.swift in Sources */,
+				B2F58DE624737A0E0058720C /* FavoritesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
