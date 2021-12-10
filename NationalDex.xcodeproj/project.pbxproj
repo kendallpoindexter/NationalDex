@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0750F337F846A41C78F52706 /* Pods_NationalDex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 317AA6D0F13B40307D32CDF8 /* Pods_NationalDex.framework */; };
+		B25598BB27630FB40070F70E /* NetworkManagable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25598BA27630FB40070F70E /* NetworkManagable.swift */; };
+		B25598BE276310F60070F70E /* NetworkingExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25598BD276310F60070F70E /* NetworkingExtentions.swift */; };
+		B25598C02763B6050070F70E /* PokemonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25598BF2763B6050070F70E /* PokemonService.swift */; };
 		B2F58D9B246A31BC0058720C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58D9A246A31BC0058720C /* AppDelegate.swift */; };
 		B2F58D9D246A31BC0058720C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58D9C246A31BC0058720C /* SceneDelegate.swift */; };
 		B2F58D9F246A31BC0058720C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F58D9E246A31BC0058720C /* HomeTableViewController.swift */; };
@@ -30,6 +33,9 @@
 		317AA6D0F13B40307D32CDF8 /* Pods_NationalDex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NationalDex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37B647A1479904A3A670F651 /* Pods-NationalDex.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalDex.release.xcconfig"; path = "Target Support Files/Pods-NationalDex/Pods-NationalDex.release.xcconfig"; sourceTree = "<group>"; };
 		8E22FB95AB7BBE205629F58D /* Pods-NationalDex.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NationalDex.debug.xcconfig"; path = "Target Support Files/Pods-NationalDex/Pods-NationalDex.debug.xcconfig"; sourceTree = "<group>"; };
+		B25598BA27630FB40070F70E /* NetworkManagable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagable.swift; sourceTree = "<group>"; };
+		B25598BD276310F60070F70E /* NetworkingExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingExtentions.swift; sourceTree = "<group>"; };
+		B25598BF2763B6050070F70E /* PokemonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonService.swift; sourceTree = "<group>"; };
 		B2F58D97246A31BC0058720C /* NationalDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NationalDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F58D9A246A31BC0058720C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F58D9C246A31BC0058720C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +77,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B25598BC276310BE0070F70E /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				B25598BD276310F60070F70E /* NetworkingExtentions.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		B2F58D8E246A31BC0058720C = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +106,7 @@
 		B2F58D99246A31BC0058720C /* NationalDex */ = {
 			isa = PBXGroup;
 			children = (
+				B25598BC276310BE0070F70E /* Extentions */,
 				B2F58D9A246A31BC0058720C /* AppDelegate.swift */,
 				B2F58D9C246A31BC0058720C /* SceneDelegate.swift */,
 				B2F58DA8246A31BD0058720C /* Info.plist */,
@@ -109,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				B2F58DB6246AFDC50058720C /* NetworkManager.swift */,
+				B25598BA27630FB40070F70E /* NetworkManagable.swift */,
+				B25598BF2763B6050070F70E /* PokemonService.swift */,
 			);
 			path = "Networking ";
 			sourceTree = "<group>";
@@ -174,7 +191,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "Kendall Poindexter";
 				TargetAttributes = {
 					B2F58D96246A31BC0058720C = {
@@ -265,8 +282,11 @@
 				B2F58DB3246A38B30058720C /* PokedexModel.swift in Sources */,
 				B2F58DB7246AFDC50058720C /* NetworkManager.swift in Sources */,
 				B2F58D9B246A31BC0058720C /* AppDelegate.swift in Sources */,
+				B25598BB27630FB40070F70E /* NetworkManagable.swift in Sources */,
 				B2F58DE024721D860058720C /* FavoritesCollectionViewController.swift in Sources */,
 				B2F58DDE246CD6990058720C /* DetailViewModel.swift in Sources */,
+				B25598BE276310F60070F70E /* NetworkingExtentions.swift in Sources */,
+				B25598C02763B6050070F70E /* PokemonService.swift in Sources */,
 				B2F58DD9246C89F30058720C /* HomeTableViewModel.swift in Sources */,
 				B2F58D9D246A31BC0058720C /* SceneDelegate.swift in Sources */,
 				B2F58DB5246AFB2C0058720C /* PokemonModel.swift in Sources */,
@@ -324,6 +344,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -384,6 +405,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

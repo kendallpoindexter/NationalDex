@@ -8,8 +8,6 @@
 
 import Foundation
 
-//Why did I have to implement this here but not in the pokedex model?
-
 struct Pokemon: Hashable {
     let uuid = UUID()
     let name: String
@@ -37,12 +35,11 @@ struct Ability {
 }
 
 struct AbilityResponse: Decodable {
-    let ability: PokeAbility
+    let ability: abilityReference
     
 }
 
-//Rename to ability reference
-struct PokeAbility: Decodable {
+struct abilityReference: Decodable {
     let name: String
     let url: String
 }
